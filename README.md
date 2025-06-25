@@ -29,6 +29,18 @@ Solids, Chloramines, Sulfate, Conductivity, Organic Carbon, Trihalomethanes dan 
 9. Turbidity: Ukuran sifat air yang memancarkan cahaya dalam NTU.
 10. Potability: Menunjukkan apakah air aman untuk dikonsumsi manusia. Dapat diminum 1 dan Tidak Dapat diminum 0
 
+## Data Preparation
+
+Sebelum melakukan pelatihan model, terlebih dahulu dilakukan beberapa proses berikut agar data lebih siap
+digunakan.
+
+1. Menangani masalah missing value dengan melakukan dropping pada data menggunakan fungsi dropna()
+2. Menangani outlier dengan metode capping
+3. Melakukan splitting dataset menjadi data latih dan data uji dengan pembagian 80:20
+4. Melakukan tahap feature selection untuk mengetahui fitur apa saja yang paling penting menggunakan Embedded Method
+5. Melakukan scaling data menggunaakan MinMaxScaler
+   6Melakukan oversampling menggunakan SMOTE
+
 ## Modeling and Evaluating
 
 Pada proyek ini untuk tahap modeling menggunakan dua algoritma yaitu Random Forest dan SVM. Setelah itu dilakukan
