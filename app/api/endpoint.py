@@ -1,8 +1,10 @@
 from typing import Any
 
-from fastapi import APIRouter
-from requests import Request
+from fastapi import APIRouter, HTTPException, Depends
 from starlette.responses import HTMLResponse
+
+from app.model.schemas import PredictionRequest, PredictionResponse
+from app.service.prediction_service import get_prediction_service
 
 root_router = APIRouter()
 
@@ -32,5 +34,18 @@ def index() -> Any:
 
 
 @api_router.post("/predict")
-def predict(request: Request) -> Any:
-    pass
+async def predict(
+        model_input: PredictionRequest,
+        prediction_service: get_prediction_service = Depends(),
+) -> PredictionResponse:
+    if model_input is None:
+        raise HTTPException(status_code=400, detail="Invalid input")
+
+    model_input = model_input.model_dump()
+
+    result = await prediction_service.predict(model_input)
+
+    return PredictionResponse(
+        label=result['label'],
+        description=result['description']
+    )

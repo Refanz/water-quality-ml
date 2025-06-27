@@ -1,6 +1,7 @@
 import os.path
 
 import joblib
+import pandas as pd
 
 from app.core.config import settings
 
@@ -32,7 +33,7 @@ class WaterQualityModel:
         self._model = joblib.load(os.path.join(settings.MODEL_PATH, 'model_svm.joblib'))
         print("Model loaded.")
 
-    def __preprocessing(self, model_input):
+    def preprocessing(self, model_input):
         if self._scaler is None:
             raise RuntimeError("Scaler not loaded")
 
@@ -43,9 +44,7 @@ class WaterQualityModel:
         if self._model is None:
             raise RuntimeError("Model must be loaded.")
 
-        preprocessed_input = self.__preprocessing(model_input)
-
-        prediction = self._model.predict(preprocessed_input)[0]
+        prediction = self._model.predict(model_input)
         return prediction
 
 
