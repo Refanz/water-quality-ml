@@ -18,7 +18,7 @@ val NavBarStyle = CssStyle {
     base {
         Modifier
             .fillMaxWidth()
-            .padding(20.px)
+            .padding(16.px)
             .position(Position.Fixed)
             .top(0.percent)
             .transition(Transition.of("ease-in-out", 0.32.s))

@@ -1,4 +1,4 @@
-package com.refanzzzz.waterquality.sections.landingpage
+package com.refanzzzz.waterquality.components.sections.landingpage
 
 import androidx.compose.runtime.Composable
 import com.refanzzzz.waterquality.styles.NavBarStyle
@@ -9,6 +9,8 @@ import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.framework.annotations.DelicateApi
 import com.varabyte.kobweb.silk.style.toModifier
 import com.refanzzzz.waterquality.util.Assets
+import com.varabyte.kobweb.compose.foundation.layout.Arrangement
+import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.modifiers.size
 import com.varabyte.kobweb.silk.components.graphics.Image
 import org.jetbrains.compose.web.css.px
@@ -23,14 +25,28 @@ fun NavBar() {
         modifier = NavBarStyle.toModifier()
     ) {
         Row(
-          modifier = Modifier.fillMaxWidth()
+          modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
                 src = Assets.WATER_ICON,
                 modifier = Modifier
-                    .size(24.px)
+                    .size(64.px)
             )
+            NavLinks()
         }
+    }
+}
+
+@Composable
+fun NavLinks(modifier: Modifier = Modifier) {
+    Row(
+        modifier = modifier,
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.End
+    ) {
+
     }
 }
 

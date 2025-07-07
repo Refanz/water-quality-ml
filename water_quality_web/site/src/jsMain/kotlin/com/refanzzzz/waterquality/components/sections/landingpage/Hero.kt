@@ -1,4 +1,4 @@
-package com.refanzzzz.waterquality.sections.landingpage
+package com.refanzzzz.waterquality.components.sections.landingpage
 
 import androidx.compose.runtime.Composable
 

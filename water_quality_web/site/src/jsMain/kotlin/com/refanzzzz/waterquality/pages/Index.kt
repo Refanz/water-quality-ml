@@ -1,9 +1,9 @@
 package com.refanzzzz.waterquality.pages
 
 import androidx.compose.runtime.Composable
-import com.refanzzzz.waterquality.sections.landingpage.Footer
-import com.refanzzzz.waterquality.sections.landingpage.Hero
-import com.refanzzzz.waterquality.sections.landingpage.NavBar
+import com.refanzzzz.waterquality.components.sections.landingpage.Footer
+import com.refanzzzz.waterquality.components.sections.landingpage.Hero
+import com.refanzzzz.waterquality.components.sections.landingpage.NavBar
 import com.varabyte.kobweb.compose.css.Overflow
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
