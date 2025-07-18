@@ -1,7 +1,7 @@
 import pandas as pd
 
 from app.core.config import settings
-from app.infrastructure.model.model import water_model_instance
+from app.model.model import water_model_instance
 
 
 def convert_model_input_to_dataframe(model_input):

@@ -3,7 +3,7 @@ from typing import Any
 from fastapi import APIRouter, HTTPException, Depends
 from starlette.responses import HTMLResponse
 
-from app.infrastructure.model.schemas import PredictionRequest, PredictionResponse
+from app.schemas.prediction_schema import PredictionRequest, PredictionResponse
 from app.service.prediction_service import get_prediction_service
 
 root_router = APIRouter()
