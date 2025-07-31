@@ -1,4 +1,7 @@
+from typing import Annotated
+
 import pandas as pd
+from fastapi import Depends
 
 from app.core.config import settings
 from app.model.model import water_model_instance
@@ -31,3 +34,6 @@ class PredictionService:
 
 def get_prediction_service():
     return PredictionService()
+
+
+prediction_service_dependency = Annotated[PredictionService, Depends(get_prediction_service)]
